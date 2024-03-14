@@ -19,4 +19,13 @@ input_elements = driver.find_element(By.ID,'password').send_keys('secret_sauce')
 time.sleep(1.5)
 input_elements = driver.find_element(By.ID,'login-button').click()
 
+#AssertionError appers when an assert fails
+try:
+     button_add = driver.find_element(By.ID,'add-to-cart-sauce-labs-backpack').click()
+     time.sleep(2)
+     button_add = driver.find_element(By.ID,'add-to-cart-sauce-labs-bike-light').click()
+     time.sleep(2)
+     print("button add-cart is present in page")
+except AssertionError:
+     print("Error, element not finding")
 

@@ -18,3 +18,19 @@ time.sleep(1.5)
 input_elements = driver.find_element(By.ID,'password').send_keys('secret_sauce')
 time.sleep(1.5)
 input_elements = driver.find_element(By.ID,'login-button').click()
+
+button_add = driver.find_element(By.ID,'add-to-cart-sauce-labs-backpack').click()
+time.sleep(2.5)
+button_add = driver.find_element(By.ID,'add-to-cart-sauce-labs-bike-light').click()
+time.sleep(2.5)
+driver.find_element(By.CLASS_NAME,'shopping_cart_link').click()
+time.sleep(2.5)
+#in cart
+try:
+    button_remove = driver.find_element(By.ID,'remove-sauce-labs-backpack').click()
+    time.sleep(2.5)
+    button_remove = driver.find_element(By.ID,'remove-sauce-labs-bike-light').click()
+    time.sleep(2.5)
+    print("button remove is present in page ")
+except NoSuchElementException :
+    print("Error, element, not finding ")

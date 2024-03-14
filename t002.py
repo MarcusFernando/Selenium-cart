@@ -14,9 +14,9 @@ driver.get("https://www.saucedemo.com/")
 time.sleep(2)
 #login, maybe the class key could interessting in somes cases, for exemple: send_keys(keys.CONTROL + 'c', 'abc' + key.ENTER)
 input_elements = driver.find_element(By.ID,'user-name').send_keys('standard_user')
-time.sleep(1.5)
+time.sleep(2.5)
 input_elements = driver.find_element(By.ID,'password').send_keys('secret_sauce')
-time.sleep(1.5)
+time.sleep(2.5)
 input_elements = driver.find_element(By.ID,'login-button').click()
 
 button_add = driver.find_element(By.ID,'add-to-cart-sauce-labs-backpack').click()
@@ -32,5 +32,5 @@ try:
     button_remove = driver.find_element(By.ID,'remove-sauce-labs-bike-light').click()
     time.sleep(2.5)
     print("button remove is present in page ")
-except NoSuchElementException :
+except NoSuchElementException : #this command is raised when an element cannot be found on the page
     print("Error, element not finding ")

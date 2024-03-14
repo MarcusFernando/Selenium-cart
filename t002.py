@@ -33,4 +33,4 @@ try:
     time.sleep(2.5)
     print("button remove is present in page ")
 except NoSuchElementException :
-    print("Error, element, not finding ")
+    print("Error, element not finding ")

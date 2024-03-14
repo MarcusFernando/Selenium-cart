@@ -28,7 +28,7 @@ driver.find_element(By.ID,'continue-shopping').click()
 reference_element = driver.find_element(By.CLASS_NAME,'footer')
 reference_element2 = driver.find_element(By.CLASS_NAME,'app_logo')
 time.sleep(2.5)
-reference_element.location_once_scrolled_into_view #scroll comand
+reference_element.location_once_scrolled_into_view #scroll comand, This command will direct you to the referred element
 time.sleep(2.5)
 driver.find_element(By.ID,'add-to-cart-test.allthethings()-t-shirt-(red)').click()
 time.sleep(2.5)

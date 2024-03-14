@@ -14,9 +14,9 @@ driver.get("https://www.saucedemo.com/")
 time.sleep(2)
 #login, maybe the class key could interessting in somes cases, for exemple: send_keys(keys.CONTROL + 'c', 'abc' + key.ENTER)
 input_elements = driver.find_element(By.ID,'user-name').send_keys('standard_user')
-time.sleep(1.5)
+time.sleep(2.5)
 input_elements = driver.find_element(By.ID,'password').send_keys('secret_sauce')
-time.sleep(1.5)
+time.sleep(2.5)
 input_elements = driver.find_element(By.ID,'login-button').click()
 
 #AssertionError appers when an assert fails
@@ -25,7 +25,13 @@ try:
      time.sleep(2)
      button_add = driver.find_element(By.ID,'add-to-cart-sauce-labs-bike-light').click()
      time.sleep(2)
+     driver.find_element(By.CLASS_NAME,'shopping_cart_link').click()
+     time.sleep(2.5)
      print("button add-cart is present in page")
 except AssertionError:
      print("Error, element not finding")
 
+#test of route
+current_url = driver.current_url
+expected_url = 'https://www.saucedemo.com/inventory.html'
+assert current_url == expected_url, "route confirmed" #if the passed condition of the assert is false, python will raise the assertionerror automatically
